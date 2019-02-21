@@ -1,4 +1,4 @@
-package learn.spring.coach;
+package learn.spring.coach.constructorinjection;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,6 +14,7 @@ public class MyApplication {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		ICoach coach3 = context.getBean("coach", ICoach.class);
 		System.out.println(coach3.getMyAdvice());
+		System.out.println(coach3.getDailyFortune());
 		context.close();
 	}
 

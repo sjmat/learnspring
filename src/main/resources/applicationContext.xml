@@ -7,7 +7,11 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="coach" class="learn.spring.coach.TennisCoach"></bean>
+	<bean id="fortuneService" class="learn.spring.coach.constructorinjection.HappyFortuneService"></bean>
+	
+	<bean id="coach" class="learn.spring.coach.constructorinjection.TennisCoach">
+		<constructor-arg ref="fortuneService"></constructor-arg>
+	</bean>
 
 	<bean id="myLoggerConfig"
 		class="learn.spring.coach.logger.MyLoggerConfig"
