@@ -1,4 +1,4 @@
-package learn.spring.coach.constructorinjection;
+package learn.spring.coach.literalvalues;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -11,10 +11,12 @@ public class MyApplication {
 		System.out.println(coach1.getMyAdvice());
 		System.out.println(coach2.getMyAdvice());
 		
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext_CI.xml");
-		ICoach coach3 = context.getBean("coach", ICoach.class);
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext_LV.xml");
+		CricketCoach coach3 = context.getBean("coach", CricketCoach.class);
 		System.out.println(coach3.getMyAdvice());
 		System.out.println(coach3.getDailyFortune());
+		System.out.println(coach3.getEmailAddress());
+		System.out.println(coach3.getTeamName());
 		context.close();
 	}
 
